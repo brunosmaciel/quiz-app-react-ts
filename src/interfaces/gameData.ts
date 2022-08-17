@@ -11,5 +11,6 @@ export type GameData = {
 export type Colors = {
   primary: string;
   secondary: string;
-  tertiary: string;
+  third: string;
+  fourth: string;
 };

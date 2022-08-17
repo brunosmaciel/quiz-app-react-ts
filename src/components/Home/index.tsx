@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Container, Title, SubTitle, PlayerNameInput, Button, A } from './styled';
+import { MainContent, Title, SubTitle, PlayerNameInput, Button, A, Label } from './styled';
 import { useEffect, useState } from 'react';
 import { startGame, resetGame, setGameId } from '../../features/game/exampleReducer';
 import { useAppDispatch } from '../../app/hooks';
@@ -26,19 +26,19 @@ export default function Home() {
     dispatch(startGame(playerName));
   };
   return (
-    <Container>
+    <MainContent>
       <Title>Quizzeles</Title>
       <SubTitle>Vamos jogar</SubTitle>
-      <label>
+      <Label>
         Digite seu nome abaixo
         <PlayerNameInput onChange={handleChange} type="text" name="playerName" id="playerName" />
-      </label>
+      </Label>
       <Button to="/game" onClick={handleClick}>
         Jogar Agora
       </Button>
       <A href="https://github.com/brunosmaciel" target="_blank">
         Sobre
       </A>
-    </Container>
+    </MainContent>
   );
 }

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Game } from './pages/Game';
 import { Result } from './pages/Result';
 import { Home } from './pages/Home';
-import { Contaier, GlobalStyles } from './theme/GlobalStyles';
+import { Container, GlobalStyles } from './theme/GlobalStyles';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
@@ -11,7 +11,7 @@ export const App = () => {
   return (
     <BrowserRouter>
       <Provider store={store}>
-        <Contaier>
+        <Container>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/game/result" element={<Result />} />
@@ -24,7 +24,7 @@ export const App = () => {
             className="toast-container"
             theme="dark"
           />
-        </Contaier>
+        </Container>
       </Provider>
     </BrowserRouter>
   );

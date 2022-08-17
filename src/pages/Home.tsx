@@ -1,10 +1,6 @@
-import { HomeContainer } from './style';
+import { Container } from '../theme/GlobalStyles';
 import HomeComponent from '../components/Home';
 
 export const Home = () => {
-  return (
-    <HomeContainer>
-      <HomeComponent />
-    </HomeContainer>
-  );
+  return <HomeComponent />;
 };
