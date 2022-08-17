@@ -9,7 +9,7 @@ export const Container = styled.section`
   flex-direction: column;
 `;
 export const Result = styled.div`
-  border: 2px solid ${colors.tertiary};
+  border: 2px solid ${colors.third};
   width: 200px;
   height: 300px;
   border-radius: 99999px;
@@ -30,7 +30,7 @@ export const Result = styled.div`
 export const Button = styled.button`
   text-decoration: none;
   border: none;
-  background-color: ${colors.tertiary};
+  background-color: ${colors.third};
   width: 60%;
   height: 12%;
   color: white;

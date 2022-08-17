@@ -41,7 +41,7 @@ export const Answer = styled.label`
   margin: 10px 0;
   width: 90%;
   display: flex;
-  border: 2px solid ${colors.tertiary};
+  border: 2px solid ${colors.third};
   border-radius: 10px;
   padding: 10px;
   align-items: center;
@@ -61,7 +61,7 @@ export const Button = styled.div`
   justify-content: center;
   button {
     text-decoration: none;
-    background-color: ${colors.tertiary};
+    background-color: ${colors.third};
     width: 50%;
     height: 50px;
     color: white;
