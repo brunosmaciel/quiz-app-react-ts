@@ -11,7 +11,7 @@ import { CgMenuLeft } from 'react-icons/cg';
 import { TbLetterA, TbLetterD, TbLetterE, TbLetterC, TbLetterB } from 'react-icons/tb';
 import colors from '../../config/colors';
 import { toast } from 'react-toastify';
-export default function Game() {
+export default function GameComponent() {
   const [gameController, setGameController] = useState(0);
   const [inputId, setInputId] = useState('');
   const [event, setEvent] = useState('' as any);
@@ -74,7 +74,7 @@ export default function Game() {
   }
   if (gameController === gameData.length) {
     navigate('/game/result');
-    return;
+    return <></>;
   }
   return (
     <Container>
