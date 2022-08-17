@@ -9,12 +9,12 @@ export const MainContent = styled.div`
   display: flex;
   flex-flow: column wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 export const Title = styled.h1`
   font-size: 5rem;
   color: ${colors.primary};
-  margin: 2rem 0 2rem 0;
+  margin: 6rem 0 2rem 0;
 `;
 export const SubTitle = styled.h3`
   font-size: 2rem;
@@ -49,7 +49,8 @@ export const Button = styled(Link)`
   text-decoration: none;
   background-color: ${colors.third};
   font-size: 1.6rem;
-  min-width: 30rem;
+  max-width: 30rem;
+  width: 60%;
   height: 8%;
   color: white;
   display: flex;
@@ -65,7 +66,8 @@ export const Button = styled(Link)`
 export const A = styled.a`
   text-decoration: none;
   background-color: ${colors.third};
-  min-width: 30rem;
+  max-width: 30rem;
+  width: 60%;
   font-size: 1.6rem;
   height: 8%;
   color: white;

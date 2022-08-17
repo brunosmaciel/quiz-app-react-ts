@@ -8,7 +8,7 @@ export const GlobalStyles = createGlobalStyle`
     padding:0;
     box-sizing:border-box;
     font-family: 'Roboto Slab',sans-serif; 
-    overflow:hidden;
+
   }
   body{
     width:100%;
@@ -19,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size:62.5%;
   }
   html,body,#root{
+    width:100%;
     height:100%;
     display:flex;
     justify-content:center;
@@ -32,6 +33,7 @@ export const GlobalStyles = createGlobalStyle`
   .Toastify__toast-theme--dark.Toastify__toast--warning {
   color: white;
   background: ${colors.third};
+  font-size:1.5rem;
 }
 `;
 
