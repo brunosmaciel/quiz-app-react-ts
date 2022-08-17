@@ -86,27 +86,27 @@ export default function GameComponent() {
       <Question>{gameData[gameController].question} </Question>
       <Answer htmlFor="a" onClick={setColor}>
         <input type="radio" name="answer" id="a" onChange={handleChange} />
-        <TbLetterA size={25} color={colors.tertiary} />
+        <TbLetterA size={25} color={colors.third} />
         <span>{gameData[gameController].a}</span>
       </Answer>
       <Answer onClick={setColor}>
         <input type="radio" name="answer" id="b" onChange={handleChange} />
-        <TbLetterB size={25} color={colors.tertiary} />
+        <TbLetterB size={25} color={colors.third} />
         {gameData[gameController].b}
       </Answer>
       <Answer onClick={setColor}>
         <input type="radio" name="answer" id="c" onChange={handleChange} />
-        <TbLetterC size={25} color={colors.tertiary} />
+        <TbLetterC size={25} color={colors.third} />
         {gameData[gameController].c}
       </Answer>
       <Answer onClick={setColor}>
         <input type="radio" name="answer" id="d" onChange={handleChange} />
-        <TbLetterD size={25} color={colors.tertiary} />
+        <TbLetterD size={25} color={colors.third} />
         {gameData[gameController].d}
       </Answer>
       <Answer onClick={setColor}>
         <input type="radio" name="answer" id="e" onChange={handleChange} />
-        <TbLetterE size={25} color={colors.tertiary} />
+        <TbLetterE size={25} color={colors.third} />
         {gameData[gameController].e}
       </Answer>
       <Button>
