@@ -17,7 +17,7 @@ export const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/game/result" element={<Result />} />
             <Route path="/game/:id" element={<Game />} />
-            {/* <Route path="/game" element={<Game />} /> */}
+            /* <Route path="/game" element={<Page404 />} /> */
             <Route path="*" element={<Page404 />} />
           </Routes>
           <GlobalStyles />
