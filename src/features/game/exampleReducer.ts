@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import generateGameId from '../../services/gameIdGenerator';
 
 interface GameState {
   gameInProgress: boolean;
@@ -29,9 +28,8 @@ export const exampleReducer = createSlice({
       state.score = 0;
       state.playerName = '';
     },
-    setGameId: (state) => {
-      const gameId = generateGameId(10);
-      state.gameId = gameId;
+    setGameId: (state, action: PayloadAction<string>) => {
+      state.gameId = action.payload;
     },
   },
 });

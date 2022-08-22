@@ -10,6 +10,14 @@ export const MainContent = styled.div`
   flex-flow: column wrap;
   align-items: center;
   justify-content: flex-start;
+  div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 12rem;
+  }
 `;
 export const Title = styled.h1`
   font-size: 5rem;

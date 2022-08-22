@@ -8,7 +8,6 @@ export const GlobalStyles = createGlobalStyle`
     padding:0;
     box-sizing:border-box;
     font-family: 'Roboto Slab',sans-serif; 
-
   }
   body{
     width:100%;
@@ -20,7 +19,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   html,body,#root{
     width:100%;
-    height:100%;
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -39,8 +38,7 @@ export const GlobalStyles = createGlobalStyle`
 
 export const Container = styled.section`
   width: 48rem;
-  height: 100vh;
-
+  height: 80vh;
   @media (max-width: 768px) and (min-width: 481px) {
     width: 76.8rem;
     height: 100vh;
@@ -54,7 +52,26 @@ export const Container = styled.section`
     height: 100vh;
   }
   @media (min-width: 1201px) {
-    width: 160rem;
+    width: 120rem;
     height: 100vh;
+  }
+`;
+export const Button = styled.button`
+  text-decoration: none;
+  border: none;
+  font-size: 1.6rem;
+  background-color: ${colors.third};
+  width: 60%;
+  max-width: 20rem;
+  height: 5rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+  &:hover {
+    background-color: ${colors.primary};
   }
 `;

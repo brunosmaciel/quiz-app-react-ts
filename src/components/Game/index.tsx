@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { gameData } from '../../services/data';
+import { useEffect } from 'react';
 import { useState } from 'react';
-import { Page404 } from '../../pages/404';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import { sumScore } from '../../features/game/exampleReducer';
-import { Container, Question, Answer, Button } from './styled';
-import { PlayerName } from './styled';
+import { Question, Answer } from './styled';
+import { Button } from '../../theme/GlobalStyles';
+import { PlayerName, MainContent } from './styled';
 import { CgMenuLeft } from 'react-icons/cg';
 import { TbLetterA, TbLetterD, TbLetterE, TbLetterC, TbLetterB } from 'react-icons/tb';
 import colors from '../../config/colors';
@@ -32,7 +33,6 @@ export default function GameComponent() {
           event.target.checked = false;
           setGameController(gameController + 1);
 
-          setColor();
           return;
         }
       } catch (e) {
@@ -40,6 +40,7 @@ export default function GameComponent() {
         return;
       }
     }
+    toast.clearWaitingQueue();
     toast.warning('Voce precisa selecionar uma resposta');
   };
   const handleChange = (e: any) => {
@@ -47,71 +48,62 @@ export default function GameComponent() {
     setInputId(e.target.id as any);
     setEvent(e);
   };
-  const setColor = () => {
-    const elementos = Array.from(document.getElementsByName('answer')) as HTMLInputElement[];
-    for (const elemento of elementos) {
-      if (elemento.checked) {
-        const parent = elemento.parentElement as HTMLLabelElement;
-        parent.style.background = 'white';
-      } else {
-        const parent = elemento.parentElement as HTMLLabelElement;
-        parent.style.background = colors.secondary;
-      }
-    }
-  };
 
   if (!gameId) {
-    // useEffect(() => {
-    //   setTimeout(() => {
-    //     navigate('/');
-    //   }, 3000);
-    // });
-    return (
-      <Container>
-        <Page404></Page404>
-      </Container>
-    );
+    useEffect(() => {
+      navigate('/');
+    });
+    return <></>;
   }
   if (gameController === gameData.length) {
     navigate('/game/result');
     return <></>;
   }
   return (
-    <Container>
+    <MainContent>
       <PlayerName>
         <div>
           <span>{playerName}</span> <CgMenuLeft size={30} color={colors.primary} />
         </div>
       </PlayerName>
       <Question>{gameData[gameController].question} </Question>
-      <Answer htmlFor="a" onClick={setColor}>
-        <input type="radio" name="answer" id="a" onChange={handleChange} />
-        <TbLetterA size={25} color={colors.third} />
-        <span>{gameData[gameController].a}</span>
+      <Answer htmlFor="a">
+        <input type="radio" name="answer" id="a" onChange={handleChange} className="input" />
+        <div>
+          <TbLetterA size={25} color={colors.third} />
+          <span>{gameData[gameController].a}</span>
+        </div>
       </Answer>
-      <Answer onClick={setColor}>
-        <input type="radio" name="answer" id="b" onChange={handleChange} />
-        <TbLetterB size={25} color={colors.third} />
-        {gameData[gameController].b}
+      <Answer>
+        <input type="radio" name="answer" id="b" onChange={handleChange} className="input" />
+        <div>
+          <TbLetterB size={25} color={colors.third} />
+          <span>{gameData[gameController].b}</span>
+        </div>
       </Answer>
-      <Answer onClick={setColor}>
-        <input type="radio" name="answer" id="c" onChange={handleChange} />
-        <TbLetterC size={25} color={colors.third} />
-        {gameData[gameController].c}
+      <Answer>
+        <input type="radio" name="answer" id="c" onChange={handleChange} className="input" />
+        <div>
+          <TbLetterC size={25} color={colors.third} />
+          <span>{gameData[gameController].c}</span>
+        </div>
       </Answer>
-      <Answer onClick={setColor}>
-        <input type="radio" name="answer" id="d" onChange={handleChange} />
-        <TbLetterD size={25} color={colors.third} />
-        {gameData[gameController].d}
+      <Answer>
+        <input type="radio" name="answer" id="d" onChange={handleChange} className="input" />
+        <div>
+          <TbLetterD size={25} color={colors.third} />
+          <span>{gameData[gameController].d}</span>
+        </div>
       </Answer>
-      <Answer onClick={setColor}>
-        <input type="radio" name="answer" id="e" onChange={handleChange} />
-        <TbLetterE size={25} color={colors.third} />
-        {gameData[gameController].e}
+      <Answer>
+        <input type="radio" name="answer" id="e" onChange={handleChange} className="input" />
+        <div>
+          <TbLetterE size={25} color={colors.third} />
+          <span>{gameData[gameController].e}</span>
+        </div>
       </Answer>
-      <Button>
-        <button onClick={handleClick}>Responder</button>
-      </Button>
-    </Container>
+
+      <Button onClick={handleClick}>Responder</Button>
+    </MainContent>
   );
 }

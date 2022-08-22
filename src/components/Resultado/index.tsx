@@ -1,8 +1,9 @@
-import { Container, Button, Result } from './styled';
 import { useNavigate } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '../../app/hooks';
-import { gameData } from '../../services/data';
 import { resetGame } from '../../features/game/exampleReducer';
+import { MainContent } from './styled';
+import { Button } from '../../theme/GlobalStyles';
+import { gameData } from '../../services/data';
 export const Resultado = () => {
   const state = useAppSelector((state) => state.example);
   const navigate = useNavigate();
@@ -12,14 +13,14 @@ export const Resultado = () => {
     navigate('/');
   };
   return (
-    <Container>
-      <Result>
-        <h1>Seu resultado, {state.playerName}</h1>
+    <MainContent>
+      <div>
+        <h1>Seu resultado </h1>
         <p>
           Acertou {state.score} de {gameData.length}
         </p>
-      </Result>
+      </div>
       <Button onClick={handleClick}>Jogar novamente</Button>
-    </Container>
+    </MainContent>
   );
 };

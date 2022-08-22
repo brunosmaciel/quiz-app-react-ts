@@ -6,6 +6,7 @@ import { Container, GlobalStyles } from './theme/GlobalStyles';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
+import { Page404 } from './pages/404/404';
 
 export const App = () => {
   return (
@@ -15,7 +16,9 @@ export const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/game/result" element={<Result />} />
-            <Route path="/game" element={<Game />} />
+            <Route path="/game/:id" element={<Game />} />
+            {/* <Route path="/game" element={<Game />} /> */}
+            <Route path="*" element={<Page404 />} />
           </Routes>
           <GlobalStyles />
           <ToastContainer
@@ -23,6 +26,7 @@ export const App = () => {
             position="top-center"
             className="toast-container"
             theme="dark"
+            limit={1}
           />
         </Container>
       </Provider>
