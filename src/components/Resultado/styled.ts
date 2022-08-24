@@ -35,4 +35,29 @@ export const MainContent = styled.div`
     p {
     }
   }
+  @media (max-width: 493px) {
+    div {
+      width: 80%;
+      height: 48%;
+    }
+  }
+  @media (max-width: 408px) {
+    div {
+      width: 80%;
+      height: 45%;
+    }
+  }
+  @media (max-width: 321px) {
+    div {
+      width: 80%;
+      height: 35%;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.6rem;
+    }
+  }
 `;

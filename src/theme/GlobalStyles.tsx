@@ -38,7 +38,7 @@ export const GlobalStyles = createGlobalStyle`
 
 export const Container = styled.section`
   width: 48rem;
-  height: 80vh;
+  height: 100vh;
   @media (max-width: 768px) and (min-width: 481px) {
     width: 76.8rem;
     height: 100vh;
